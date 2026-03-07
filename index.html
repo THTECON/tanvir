@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Md. Tanvir Hasan | Economist & Researcher</title>
+<title>Md. Tanvir Hasan | Aspiring Economist</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root {
@@ -59,19 +59,21 @@
   /* SECTIONS */
   section { padding: 6rem 4rem; border-top: 1px solid var(--border); }
   .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 3.5rem; }
-  .section-num { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--gold); letter-spacing: 0.15em; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--gold); letter-spacing: 0.15em; }
   h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
 
   /* ABOUT */
   #about { background: var(--ink); color: var(--paper); }
-  #about .section-num { color: var(--gold-light); }
+  #about .section-label { color: var(--gold-light); }
   #about h2 { color: var(--paper); }
   .about-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 5rem; align-items: start; }
   .about-body { font-size: 0.98rem; line-height: 1.9; color: rgba(245,240,232,0.78); }
   .about-body p + p { margin-top: 1.2rem; }
   .about-body strong { color: var(--gold-light); font-weight: 500; }
-  .skills-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
-  .skill-tag { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; padding: 0.4rem 0.9rem; border: 1px solid rgba(201,151,58,0.4); color: var(--gold-light); }
+  .interests-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .interest-tag { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; padding: 0.4rem 0.9rem; border: 1px solid rgba(201,151,58,0.5); color: var(--gold-light); background: rgba(201,151,58,0.07); }
+  .skills-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .skill-tag { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; padding: 0.4rem 0.9rem; border: 1px solid rgba(245,240,232,0.15); color: rgba(245,240,232,0.55); }
   .stats-list { list-style: none; }
   .stat-item { padding: 1.4rem 0; border-bottom: 1px solid rgba(245,240,232,0.1); display: flex; flex-direction: column; gap: 0.25rem; }
   .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--gold-light); line-height: 1; }
@@ -91,6 +93,7 @@
   .tl-points li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 0.75rem; }
 
   /* WORKS */
+  #works { background: var(--paper); }
   .works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
   .work-card { background: var(--cream); padding: 2rem; position: relative; overflow: hidden; text-decoration: none; color: inherit; display: block; }
   .work-card::after { content: ''; position: absolute; inset: 0; background: var(--ink); transform: translateY(101%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); z-index: 0; }
@@ -106,56 +109,40 @@
   .work-arrow { display: block; margin-top: 1.5rem; font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em; color: var(--muted); transition: color 0.35s; }
 
   /* EDUCATION */
-  #education { background: var(--paper); }
+  #education { background: var(--cream); }
   .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-  .edu-card { background: var(--cream); padding: 2rem; border-left: 3px solid transparent; transition: border-color 0.2s, transform 0.2s; }
+  .edu-card { background: var(--paper); padding: 2rem; border-left: 3px solid transparent; transition: border-color 0.2s, transform 0.2s; }
   .edu-card:hover { border-left-color: var(--gold); transform: translateY(-4px); }
   .edu-year { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 0.8rem; }
   .edu-degree { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.4rem; }
   .edu-school { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.8rem; }
   .edu-courses { margin-top: 1rem; font-size: 0.78rem; color: var(--muted); line-height: 1.7; }
 
-  /* THOUGHTS */
-  #thoughts { background: var(--cream); }
-  .thoughts-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-  .thought-featured { background: var(--ink); padding: 3rem; color: var(--paper); position: relative; overflow: hidden; }
-  .thought-featured::before { content: '"'; position: absolute; top: -1rem; right: 2rem; font-family: 'Playfair Display', serif; font-size: 12rem; font-weight: 900; color: rgba(201,151,58,0.12); line-height: 1; pointer-events: none; }
-  .thought-featured .date { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; color: var(--gold-light); margin-bottom: 1rem; }
-  .thought-featured h3 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; line-height: 1.25; margin-bottom: 1rem; color: var(--paper); }
-  .thought-featured p { font-size: 0.87rem; color: rgba(245,240,232,0.7); line-height: 1.8; }
-  .thought-list { display: flex; flex-direction: column; gap: 1.5px; }
-  .thought-item { background: var(--paper); padding: 1.5rem 2rem; cursor: pointer; transition: background 0.2s; text-decoration: none; color: inherit; display: block; }
-  .thought-item:hover { background: var(--ink); color: var(--paper); }
-  .thought-item:hover .thought-item-date { color: var(--gold-light); }
-  .thought-item-date { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 0.4rem; transition: color 0.2s; }
-  .thought-item-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; }
-
-  /* BLOG */
-  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-  .blog-card { border: 1.5px solid var(--border); padding: 2rem; transition: border-color 0.2s, transform 0.2s; text-decoration: none; color: inherit; display: block; }
-  .blog-card:hover { border-color: var(--gold); transform: translateY(-4px); }
-  .blog-week { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.8rem; }
-  .blog-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; line-height: 1.35; margin-bottom: 0.8rem; }
-  .blog-excerpt { font-size: 0.82rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.2rem; }
-  .blog-meta { display: flex; align-items: center; justify-content: space-between; font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.08em; color: var(--muted); border-top: 1px solid var(--border); padding-top: 1rem; }
-
-  /* COURSES */
+  /* THOUGHTS — empty placeholder */
+  #thoughts { background: var(--paper); }
+  #blog { background: var(--cream); }
   #courses { background: var(--ink); color: var(--paper); }
-  #courses .section-num { color: var(--gold-light); }
+  #courses .section-label { color: var(--gold-light); }
   #courses h2 { color: var(--paper); }
-  .courses-intro { font-size: 0.95rem; color: rgba(245,240,232,0.6); max-width: 560px; margin-bottom: 3rem; line-height: 1.8; }
-  .courses-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
-  .course-card { background: rgba(245,240,232,0.04); border: 1px solid rgba(245,240,232,0.08); padding: 2.5rem; position: relative; transition: background 0.25s, border-color 0.25s; cursor: pointer; }
-  .course-card:hover { background: rgba(201,151,58,0.08); border-color: var(--gold); }
-  .course-icon { font-size: 1.8rem; margin-bottom: 1.2rem; }
-  .course-status { position: absolute; top: 1.5rem; right: 1.5rem; font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.25rem 0.6rem; }
-  .status-upcoming { color: var(--gold-light); border: 1px solid rgba(201,151,58,0.3); }
-  .status-ongoing { color: #7aba7a; border: 1px solid rgba(122,186,122,0.3); }
-  .status-coming { color: rgba(245,240,232,0.4); border: 1px solid rgba(245,240,232,0.1); }
-  .course-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--paper); }
-  .course-desc { font-size: 0.82rem; color: rgba(245,240,232,0.55); line-height: 1.65; margin-bottom: 1.5rem; }
-  .course-details { display: flex; gap: 1.5rem; font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.08em; color: rgba(245,240,232,0.35); }
-  .course-details span { color: var(--gold-light); }
+
+  .empty-state { border: 1.5px dashed var(--border); padding: 4rem 2rem; text-align: center; }
+  #courses .empty-state { border-color: rgba(245,240,232,0.15); }
+  .empty-state-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .empty-state-text { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+  #courses .empty-state-text { color: rgba(245,240,232,0.3); }
+  .empty-state-sub { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
+  #courses .empty-state-sub { color: rgba(245,240,232,0.25); }
+
+  /* BOOK REVIEWS */
+  #books { background: var(--paper); }
+  .books-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .book-card { border: 1.5px solid var(--border); padding: 2rem; transition: border-color 0.2s, transform 0.2s; }
+  .book-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .book-spine { width: 100%; height: 4px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); margin-bottom: 1.5rem; }
+  .book-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.3rem; }
+  .book-author { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; margin-bottom: 1rem; }
+  .book-review { font-size: 0.83rem; color: var(--muted); line-height: 1.7; }
+  .book-rating { display: flex; gap: 0.2rem; margin-top: 1rem; font-size: 0.75rem; color: var(--gold); }
 
   /* CONTACT */
   #contact { background: var(--cream); }
@@ -193,8 +180,8 @@
     .profile-frame { width: 240px; height: 300px; }
     .hero-bg-text { font-size: 40vw; right: -1rem; }
     section { padding: 4rem 1.5rem; }
-    .about-grid, .thoughts-layout, .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-    .works-grid, .blog-grid, .courses-grid, .edu-grid { grid-template-columns: 1fr; }
+    .about-grid, .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .works-grid, .edu-grid, .books-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
     .footer-links { justify-content: center; }
   }
@@ -212,15 +199,17 @@
     <li><a href="#thoughts">Thoughts</a></li>
     <li><a href="#blog">Blog</a></li>
     <li><a href="#courses">Courses</a></li>
+    <li><a href="#books">Books</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
   <div class="hero-content">
-    <div class="hero-tag">Economist · Field Researcher · Policy Analyst</div>
+    <div class="hero-tag">Aspiring Economist · Independent Researcher</div>
     <h1>Md. Tanvir<em>Hasan</em></h1>
-    <p class="hero-sub">Economics graduate from East West University, Dhaka. Passionate about research, policy analysis, and data-driven solutions to real-world economic and social challenges.</p>
+    <p class="hero-sub">Economics graduate from East West University, Dhaka. Driven by curiosity about how economies work — and committed to research that speaks to real people and real policy.</p>
     <div class="hero-ctas">
       <a href="#works" class="btn-primary">View Research</a>
       <a href="#contact" class="btn-outline">Get in Touch</a>
@@ -239,45 +228,75 @@
   <div class="hero-bg-text" aria-hidden="true">Eco</div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
-  <div class="section-header"><span class="section-num">01 —</span><h2>About Me</h2></div>
-  <div class="about-grid">
+  <div class="section-header"><span class="section-label">About Me</span></div>
+  <h2>Who I Am</h2>
+  <div class="about-grid" style="margin-top:2.5rem;">
     <div>
       <div class="about-body">
-        <p>I am a <strong>motivated Economics undergraduate</strong> from East West University, Dhaka, with a strong interest in research, policy analysis, and data-driven decision-making. My academic training has equipped me with rigorous theoretical frameworks and practical analytical tools.</p>
-        <p>With hands-on experience as a <strong>Field Research Assistant</strong> at the Institute of Water Modeling (IWM) and BRAC James P Grant School of Public Health, I have built real skills in primary data collection, survey design using KoBo Toolbox, and managing field data under tight research deadlines.</p>
-        <p>I served as <strong>Volunteer Coordinator</strong> of the Economics Club of East West University and as President of Care With Disabilities — reflecting my commitment to leadership, advocacy, and community-driven impact.</p>
+        <p>
+          I am an <strong>aspiring economist and independent researcher</strong> based in Dhaka, Bangladesh, with a passion for understanding the forces that shape economies — from the transmission of monetary policy to the structural realities of labour markets. I hold a Bachelor of Social Sciences in Economics from East West University, where I built a strong foundation in both economic theory and quantitative methods.
+        </p>
+        <p>
+          Since <strong>January 2026</strong>, I have been working as a <strong>Research Assistant to Gazi Quamrul Hasan</strong>, Senior Lecturer in the Department of Economics at East West University — an experience that has sharpened my ability to think rigorously about economic problems and translate them into publishable research.
+        </p>
+        <p>
+          My research interests lie at the intersection of <strong>macroeconomic analysis, time series econometrics, and experimental research methods</strong>. I am particularly drawn to questions about how policy decisions — especially monetary policy — ripple through developing economies like Bangladesh, and how individual behaviour and social structures shape labour market outcomes in ways that standard models often miss.
+        </p>
+        <p>
+          Beyond numbers and regressions, I believe in research that is honest, accessible, and consequential. I am always looking to collaborate, learn, and contribute to conversations that matter.
+        </p>
       </div>
-      <div class="skills-row">
-        <span class="skill-tag">Econometrics</span>
-        <span class="skill-tag">Policy Analysis</span>
-        <span class="skill-tag">Field Research</span>
-        <span class="skill-tag">STATA</span>
-        <span class="skill-tag">EViews</span>
-        <span class="skill-tag">R</span>
-        <span class="skill-tag">KoBo Toolbox</span>
-        <span class="skill-tag">Development Economics</span>
-        <span class="skill-tag">Energy Economics</span>
-        <span class="skill-tag">Public Finance</span>
-        <span class="skill-tag">MS Office</span>
-        <span class="skill-tag">Canva</span>
-        <span class="skill-tag">AI Research Tools</span>
+      <div style="margin-top:1.5rem;">
+        <div style="font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,240,232,0.4);margin-bottom:0.8rem;">Research Interests</div>
+        <div class="interests-row">
+          <span class="interest-tag">Macroeconomic Issues</span>
+          <span class="interest-tag">Time Series Analysis</span>
+          <span class="interest-tag">Experimental Research</span>
+          <span class="interest-tag">Monetary Policy</span>
+          <span class="interest-tag">Labour Economics</span>
+          <span class="interest-tag">Development Economics</span>
+        </div>
+      </div>
+      <div style="margin-top:1.5rem;">
+        <div style="font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,240,232,0.4);margin-bottom:0.8rem;">Technical Skills</div>
+        <div class="skills-row">
+          <span class="skill-tag">STATA</span>
+          <span class="skill-tag">EViews</span>
+          <span class="skill-tag">R</span>
+          <span class="skill-tag">KoBo Toolbox</span>
+          <span class="skill-tag">MS Office</span>
+          <span class="skill-tag">Canva</span>
+          <span class="skill-tag">AI Research Tools</span>
+        </div>
       </div>
     </div>
     <div>
       <ul class="stats-list">
+        <li class="stat-item"><span class="stat-num">RA</span><span class="stat-label">Research Assistant — East West University, Jan 2026</span></li>
         <li class="stat-item"><span class="stat-num">2×</span><span class="stat-label">Field Research Roles — IWM & BRAC</span></li>
-        <li class="stat-item"><span class="stat-num">4+</span><span class="stat-label">Research Projects Completed</span></li>
         <li class="stat-item"><span class="stat-num">EN · BD</span><span class="stat-label">English Proficient · Bangla Native</span></li>
-        <li class="stat-item"><span class="stat-num">Dhaka</span><span class="stat-label">Bangladesh · Open to Opportunities</span></li>
+        <li class="stat-item"><span class="stat-num">Dhaka</span><span class="stat-label">Bangladesh</span></li>
       </ul>
     </div>
   </div>
 </section>
 
+<!-- EXPERIENCE -->
 <section id="experience">
-  <div class="section-header"><span class="section-num">02 —</span><h2>Experience</h2></div>
-  <div class="timeline">
+  <div class="section-header"><span class="section-label">Experience</span></div>
+  <h2>Work & Leadership</h2>
+  <div class="timeline" style="margin-top:2.5rem;">
+    <div class="timeline-item">
+      <div class="tl-period">January 2026 — Present</div>
+      <div class="tl-role">Research Assistant</div>
+      <div class="tl-org">Gazi Quamrul Hasan, Senior Lecturer, Department of Economics, East West University</div>
+      <ul class="tl-points">
+        <li>Supporting ongoing economic research under the supervision of Senior Lecturer Gazi Quamrul Hasan</li>
+        <li>Contributing to literature reviews, data collection, econometric analysis, and manuscript preparation</li>
+      </ul>
+    </div>
     <div class="timeline-item">
       <div class="tl-period">Nov 2024 – Dec 2024</div>
       <div class="tl-role">Field Research Assistant</div>
@@ -302,8 +321,7 @@
       <div class="tl-org">Economics Club of East West University</div>
       <ul class="tl-points">
         <li>Oversaw all volunteer activities, maintained members' database and club records</li>
-        <li>Organised and coordinated club events; prepared formal documentation including recruitment forms and regulations</li>
-        <li>Participated in the National Budget Discussion FY 23-24</li>
+        <li>Organised and coordinated club events; participated in the National Budget Discussion FY 23-24</li>
       </ul>
     </div>
     <div class="timeline-item">
@@ -318,9 +336,11 @@
   </div>
 </section>
 
+<!-- RESEARCH -->
 <section id="works">
-  <div class="section-header"><span class="section-num">03 —</span><h2>Research & Projects</h2></div>
-  <div class="works-grid">
+  <div class="section-header"><span class="section-label">Research & Projects</span></div>
+  <h2>Work That Matters</h2>
+  <div class="works-grid" style="margin-top:2.5rem;">
     <a href="#" class="work-card">
       <div class="work-content">
         <span class="work-tag">Undergraduate Thesis</span>
@@ -331,55 +351,33 @@
     </a>
     <a href="#" class="work-card">
       <div class="work-content">
-        <span class="work-tag">Field Research — IWM</span>
-        <div class="work-title">Factors Influencing Residential Water Demand in Dhaka City</div>
-        <p class="work-desc">Field data collection and analysis examining socioeconomic, demographic, and infrastructural factors that shape household water demand patterns across Dhaka.</p>
-        <span class="work-arrow">View Project →</span>
-      </div>
-    </a>
-    <a href="#" class="work-card">
-      <div class="work-content">
-        <span class="work-tag">Field Research — BRAC</span>
-        <div class="work-title">Transportation Accessibility & Safety in Dhaka: A Gender-Based Assessment</div>
-        <p class="work-desc">Collected and analysed data on how gender shapes experiences of transport safety and mobility in Dhaka, contributing to BRAC University's public health research.</p>
-        <span class="work-arrow">View Project →</span>
-      </div>
-    </a>
-    <a href="#" class="work-card">
-      <div class="work-content">
-        <span class="work-tag">Course Project</span>
-        <div class="work-title">Mukti — Breaking the Cycle of Drug Addiction among Street Children, Dhaka</div>
-        <p class="work-desc">Policy analysis and cost-benefit evaluation of intervention programmes targeting drug addiction among Dhaka's street children. Developed for the Project Analysis and Evaluation course.</p>
-        <span class="work-arrow">View Project →</span>
-      </div>
-    </a>
-    <a href="#" class="work-card">
-      <div class="work-content">
-        <span class="work-tag">Policy Analysis</span>
-        <div class="work-title">National Budget FY 23-24: Fiscal Policy and Distributional Impact</div>
-        <p class="work-desc">Analysis of Bangladesh's national budget for FY 23-24, examining fiscal priorities, subsidy structures, and the distributional consequences of key policy decisions.</p>
-        <span class="work-arrow">Read Analysis →</span>
+        <span class="work-tag">Working Paper</span>
+        <div class="work-title">Monetary Policy Transmission Mechanism for Bangladesh: An ARDL Approach</div>
+        <p class="work-desc">Examines the channels through which monetary policy decisions propagate across the Bangladesh economy, using the Autoregressive Distributed Lag (ARDL) modelling framework.</p>
+        <span class="work-arrow">View Paper →</span>
       </div>
     </a>
     <a href="#" class="work-card">
       <div class="work-content">
         <span class="work-tag">Working Paper</span>
-        <div class="work-title">Energy Economics & Policy in Bangladesh: Challenges and Pathways</div>
-        <p class="work-desc">Research examining Bangladesh's energy sector reform, subsidy structure, and the economic and political challenges of transitioning toward sustainable energy systems.</p>
-        <span class="work-arrow">Read Paper →</span>
+        <div class="work-title">Social Perception, Career Choice and Labour Market Outcomes in the Digital Gaming Industry: Evidence from Bangladesh</div>
+        <p class="work-desc">Investigates how social attitudes shape career decisions in Bangladesh's emerging digital gaming sector and the consequent effects on labour market participation and earnings.</p>
+        <span class="work-arrow">View Paper →</span>
       </div>
     </a>
   </div>
 </section>
 
+<!-- EDUCATION -->
 <section id="education">
-  <div class="section-header"><span class="section-num">04 —</span><h2>Education</h2></div>
-  <div class="edu-grid">
+  <div class="section-header"><span class="section-label">Education</span></div>
+  <h2>Academic Foundation</h2>
+  <div class="edu-grid" style="margin-top:2.5rem;">
     <div class="edu-card">
       <div class="edu-year">2021 – 2025</div>
       <div class="edu-degree">Bachelor of Social Sciences (BSS) — Economics</div>
       <div class="edu-school">East West University, Dhaka</div>
-      <div class="edu-courses">Key courses: Mathematical Economics · Econometrics · Cost-Benefit Analysis · International Trade & Finance · Public Finance · Money & Banking · Energy Economics & Policy · Law & Economics · Research Methodology</div>
+      <div class="edu-courses">Mathematical Economics · Econometrics · Cost-Benefit Analysis · International Trade & Finance · Public Finance · Money & Banking · Energy Economics & Policy · Law & Economics · Research Methodology</div>
     </div>
     <div class="edu-card">
       <div class="edu-year">2020</div>
@@ -394,102 +392,79 @@
   </div>
 </section>
 
+<!-- THOUGHTS -->
 <section id="thoughts">
-  <div class="section-header"><span class="section-num">05 —</span><h2>Thoughts</h2></div>
-  <div class="thoughts-layout">
-    <div class="thought-featured">
-      <div class="date">Featured Essay · 2025</div>
-      <h3>Oil Prices, Exchange Rates & Bangladesh's Macro Vulnerability</h3>
-      <p>Bangladesh's economy sits at a fascinating intersection of global commodity markets and domestic monetary policy. My thesis research reveals how international oil price shocks transmit through the exchange rate channel into domestic inflation — with implications far broader than most policymakers acknowledge. Understanding this channel is critical for foreign reserve management and subsidy policy design.</p>
-    </div>
-    <div class="thought-list">
-      <a href="#" class="thought-item"><div class="thought-item-date">2025</div><div class="thought-item-title">Why Dhaka's Water Demand Will Define Its Future Growth</div></a>
-      <a href="#" class="thought-item"><div class="thought-item-date">2024</div><div class="thought-item-title">Gender & Urban Mobility: What the Data from Dhaka Tells Us</div></a>
-      <a href="#" class="thought-item"><div class="thought-item-date">2024</div><div class="thought-item-title">Rethinking Bangladesh's National Budget Through a Policy Lens</div></a>
-      <a href="#" class="thought-item"><div class="thought-item-date">2023</div><div class="thought-item-title">Street Children and the Economics of Addiction: A Policy Failure?</div></a>
-      <a href="#" class="thought-item"><div class="thought-item-date">2023</div><div class="thought-item-title">Energy Subsidy Reform in Bangladesh: Hard Choices Ahead</div></a>
+  <div class="section-header"><span class="section-label">Thoughts</span></div>
+  <h2>Ideas Worth Sharing</h2>
+  <div style="margin-top:2.5rem;">
+    <div class="empty-state">
+      <div class="empty-state-icon">✍️</div>
+      <div class="empty-state-text">Coming Soon</div>
+      <div class="empty-state-sub">Short-form economic thinking — connecting research to real policy conversations.</div>
     </div>
   </div>
 </section>
 
+<!-- BLOG -->
 <section id="blog">
-  <div class="section-header"><span class="section-num">06 —</span><h2>Weekly Blog</h2></div>
-  <div class="blog-grid">
-    <a href="#" class="blog-card">
-      <div class="blog-week">Week 01 · 2025</div>
-      <div class="blog-title">Reading Bangladesh's Macro Data: What the Numbers Actually Say</div>
-      <p class="blog-excerpt">A walkthrough of key macroeconomic indicators from Bangladesh Bank and BBS — inflation, remittances, reserve levels — and what they signal for 2025.</p>
-      <div class="blog-meta"><span>7 min read</span><span>Macroeconomics</span></div>
-    </a>
-    <a href="#" class="blog-card">
-      <div class="blog-week">Week 02 · 2025</div>
-      <div class="blog-title">Field Research Lessons: What Surveys Can (and Cannot) Tell You</div>
-      <p class="blog-excerpt">Reflections from my experience at IWM and BRAC — survey design pitfalls, real-world data challenges, and how to keep research honest.</p>
-      <div class="blog-meta"><span>6 min read</span><span>Research Methods</span></div>
-    </a>
-    <a href="#" class="blog-card">
-      <div class="blog-week">Week 03 · 2025</div>
-      <div class="blog-title">The Cost-Benefit Framework: A Tool for Every Policy Decision</div>
-      <p class="blog-excerpt">How economists use cost-benefit analysis to evaluate public projects — and why it remains the most practical link between theory and real policy decisions.</p>
-      <div class="blog-meta"><span>8 min read</span><span>Policy</span></div>
-    </a>
+  <div class="section-header"><span class="section-label">Weekly Blog</span></div>
+  <h2>Written Every Week</h2>
+  <div style="margin-top:2.5rem;">
+    <div class="empty-state">
+      <div class="empty-state-icon">📝</div>
+      <div class="empty-state-text">Coming Soon</div>
+      <div class="empty-state-sub">Economics, policy, and research — made accessible for curious minds.</div>
+    </div>
   </div>
-  <div style="margin-top:2.5rem;"><a href="#" class="btn-outline">All Blog Posts →</a></div>
 </section>
 
+<!-- COURSES -->
 <section id="courses">
-  <div class="section-header"><span class="section-num">07 —</span><h2>Courses & Training</h2></div>
-  <p class="courses-intro">Practical courses built from academic rigour and field experience — for students, researchers, and professionals who want to think like economists.</p>
-  <div class="courses-grid">
-    <div class="course-card">
-      <span class="course-status status-ongoing">Ongoing</span>
-      <div class="course-icon">📊</div>
-      <div class="course-title">Econometrics with EViews & STATA</div>
-      <p class="course-desc">OLS regression, panel data, and time-series analysis using EViews and STATA — the tools used in real economic research. Includes applied problem sets.</p>
-      <div class="course-details"><div>Duration <span>8 Weeks</span></div><div>Level <span>Intermediate</span></div><div>Format <span>Online</span></div></div>
-    </div>
-    <div class="course-card">
-      <span class="course-status status-upcoming">Upcoming</span>
-      <div class="course-icon">🌍</div>
-      <div class="course-title">Development Economics: From Theory to Field</div>
-      <p class="course-desc">Poverty, inequality, institutional economics, and social policy — with real insights drawn from field research at IWM and BRAC University.</p>
-      <div class="course-details"><div>Duration <span>6 Weeks</span></div><div>Level <span>All Levels</span></div><div>Format <span>Hybrid</span></div></div>
-    </div>
-    <div class="course-card">
-      <span class="course-status status-upcoming">Upcoming</span>
-      <div class="course-icon">📋</div>
-      <div class="course-title">Field Research Methods & KoBo Toolbox</div>
-      <p class="course-desc">Design surveys, collect field data, manage data quality, and clean datasets for econometric analysis — drawn from real project experience.</p>
-      <div class="course-details"><div>Duration <span>5 Weeks</span></div><div>Level <span>Beginner</span></div><div>Format <span>Online</span></div></div>
-    </div>
-    <div class="course-card">
-      <span class="course-status status-coming">Coming Soon</span>
-      <div class="course-icon">💡</div>
-      <div class="course-title">Cost-Benefit Analysis for Policy Evaluation</div>
-      <p class="course-desc">Master the frameworks for evaluating public projects — discount rates, shadow pricing, distributional analysis, and decision-making under uncertainty.</p>
-      <div class="course-details"><div>Duration <span>4 Weeks</span></div><div>Level <span>Graduate</span></div><div>Format <span>Online</span></div></div>
+  <div class="section-header"><span class="section-label">Courses & Training</span></div>
+  <h2>Learn With Me</h2>
+  <div style="margin-top:2.5rem;">
+    <div class="empty-state">
+      <div class="empty-state-icon">🎓</div>
+      <div class="empty-state-text">Coming Soon</div>
+      <div class="empty-state-sub">Practical courses built from academic rigour and field experience.</div>
     </div>
   </div>
 </section>
 
+<!-- BOOK REVIEWS -->
+<section id="books">
+  <div class="section-header"><span class="section-label">Book Reviews</span></div>
+  <h2>What I've Been Reading</h2>
+  <div class="books-grid" style="margin-top:2.5rem;">
+    <div class="book-card">
+      <div class="book-spine"></div>
+      <div class="book-title">The Book Thief</div>
+      <div class="book-author">MARKUS ZUSAK · 2005</div>
+      <div class="book-review"> coming soon....</div>
+      <div class="book-rating"> ☆☆☆☆☆</div>
+    </div>
+   
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
-  <div class="section-header"><span class="section-num">08 —</span><h2>Get in Touch</h2></div>
+  <div class="section-header"><span class="section-label">Contact</span></div>
   <div class="contact-layout">
     <div>
-      <div class="contact-lead">Let's talk <em>research,</em> policy & collaboration.</div>
-      <p class="contact-body">Whether you have a research opportunity, want to collaborate on a project, enroll in a course, or just exchange ideas on economics — I am always happy to connect.</p>
+      <div class="contact-lead">Let's talk <em>research,</em> policy & ideas.</div>
+      <p class="contact-body">Whether you have a research opportunity, want to collaborate on a project, or simply want to exchange ideas on economics — I am always happy to connect. The best way to reach me is directly by email.</p>
       <div class="contact-links">
         <a href="mailto:hasan.tanvirecon@gmail.com" class="contact-link"><span class="icon">✉</span> hasan.tanvirecon@gmail.com</a>
         <a href="tel:+8801790897871" class="contact-link"><span class="icon">📞</span> +880 1790 897871</a>
         <a href="https://www.linkedin.com/in/thasant/" target="_blank" class="contact-link"><span class="icon">in</span> linkedin.com/in/thasant</a>
-        <a href="#" class="contact-link"><span class="icon">📍</span> Aftabnagar, Sector 2, Dhaka, Bangladesh</a>
+        <a href="#" class="contact-link"><span class="icon">📍</span> Dhaka, Bangladesh</a>
       </div>
     </div>
     <div>
       <form class="contact-form" onsubmit="handleSubmit(event)">
         <div class="form-group"><label class="form-label">Your Name</label><input class="form-input" type="text" placeholder="Jane Smith" /></div>
         <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" type="email" placeholder="jane@example.com" /></div>
-        <div class="form-group"><label class="form-label">Subject</label><input class="form-input" type="text" placeholder="Research collaboration, Course enquiry…" /></div>
+        <div class="form-group"><label class="form-label">Subject</label><input class="form-input" type="text" placeholder="Research collaboration, General enquiry…" /></div>
         <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" placeholder="Tell me more…"></textarea></div>
         <button type="submit" class="btn-primary" style="align-self:flex-start;border:none;cursor:pointer;">Send Message →</button>
       </form>
@@ -499,7 +474,7 @@
 
 <footer>
   <a href="#hero" class="footer-logo">Tanvir<span>.</span></a>
-  <span class="footer-copy">© 2025 Md. Tanvir Hasan · Economist · Researcher · Dhaka, Bangladesh</span>
+  <span class="footer-copy">© 2025 Md. Tanvir Hasan · Aspiring Economist · Dhaka, Bangladesh</span>
   <div class="footer-links">
     <a href="mailto:hasan.tanvirecon@gmail.com">Email</a>
     <a href="https://www.linkedin.com/in/thasant/" target="_blank">LinkedIn</a>
@@ -521,7 +496,7 @@
     });
   }, {threshold: 0.08, rootMargin: '0px 0px -20px 0px'});
 
-  document.querySelectorAll('.work-card,.blog-card,.course-card,.edu-card,.timeline-item,.stat-item,.thought-item').forEach(el => {
+  document.querySelectorAll('.work-card,.book-card,.edu-card,.timeline-item,.stat-item').forEach(el => {
     el.style.opacity='0';
     el.style.transform='translateY(16px)';
     el.style.transition='opacity 0.55s ease, transform 0.55s ease, border-color 0.2s, background 0.2s';
@@ -530,10 +505,17 @@
 
   function handleSubmit(e){
     e.preventDefault();
-    const btn = e.target.querySelector('button');
-    btn.textContent = 'Message Sent ✓';
+    const form = e.target;
+    const name = form.querySelector('input[type="text"]').value;
+    const email = form.querySelector('input[type="email"]').value;
+    const subject = form.querySelectorAll('input[type="text"]')[1].value;
+    const message = form.querySelector('textarea').value;
+    const mailtoLink = `mailto:hasan.tanvirecon@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Enquiry')}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message)}`;
+    window.location.href = mailtoLink;
+    const btn = form.querySelector('button');
+    btn.textContent = 'Opening Mail App ✓';
     btn.style.background = '#4a6741';
-    setTimeout(() => { btn.textContent = 'Send Message →'; btn.style.background = ''; }, 3000);
+    setTimeout(()=>{ btn.textContent='Send Message →'; btn.style.background=''; }, 3000);
   }
 </script>
 </body>
